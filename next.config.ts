@@ -6,9 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  turbopack: {
-    root: "/home/vishal/gpt ads/openai-ads/gptadsmedia",
-  },
+
 };
 
 export default nextConfig;
