@@ -3,228 +3,314 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GPT Ads Media — ChatGPT Advertising Agency</title>
-  <meta name="description" content="GPT Ads Media helps B2B brands design, launch, and scale ad campaigns inside ChatGPT and AI conversations.">
+  <title>GPT Ads Media — Premium AI & ChatGPT Advertising Agency</title>
+  <meta name="description" content="GPT Ads Media helps B2B tech brands design, launch, and scale performance ad campaigns natively inside ChatGPT and AI search.">
+  
+  <!-- SEO Open Graph -->
+  <meta property="og:title" content="GPT Ads Media — Premium AI & ChatGPT Advertising Agency">
+  <meta property="og:description" content="Scale your B2B pipeline natively inside AI conversations. We help brands programmatically buy, design, and optimize ChatGPT ads.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myvkserver.online">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="#" class="logo">GPT Ads Media</a>
-    <nav class="main-nav" id="mainNav">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="https://www.chatgptadlibrary.com/" target="_blank" rel="noopener">Ad Library</a>
-      <a href="#contact" class="nav-cta">Contact</a>
-    </nav>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+<!-- Hamburger Navigation Menu -->
+<div class="hamburger-menu">
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+  <nav class="hamburger-nav" id="hamburgerNav">
+    <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&times;</button>
+    <ul class="hamburger-list">
+      <li><a href="#" class="menu-link">Home</a></li>
+      <li><a href="#ad-specs" class="menu-link">What are GPT Ads</a></li>
+      <li><a href="#services" class="menu-link">How We Help</a></li>
+      <li><a href="#contact" class="menu-link">Get in Touch</a></li>
+    </ul>
+  </nav>
+  <div class="menu-overlay" id="menuOverlay"></div>
+</div>
 
-<main>
-  <section class="hero">
-    <div class="container">
-      <h1>We're ChatGPT advertising specialists turning AI conversations into revenue-generating campaigns.</h1>
-      <a href="#contact" class="btn btn-primary">Contact us</a>
+<div class="bg-glow-container">
+  <!-- Hero Section -->
+  <section class="hero" style="border-bottom: none; padding-top: 60px;">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="logo-container" style="margin-bottom: 24px;">
+          <div class="logo-icon" style="background: var(--chatgpt-green); color: #fff;">G</div>
+          <span class="logo">GPT Ads Media</span>
+        </div>
+        <h1>Be the Brand <span class="serif-italic text-gradient">ChatGPT Recommends</span></h1>
+        <p class="hero-sub">Reach customers where they're already asking questions. We help brands launch native sponsored campaigns inside ChatGPT, optimized for performance at any scale.</p>
+        <div class="btn-group" style="align-items: center;">
+          <a href="#contact" class="btn btn-primary" id="heroCtaPrimary" style="display: inline-flex; align-items: center; height: 50px;">
+            Book Strategy Call
+          </a>
+          <a href="https://www.chatgptadlibrary.com/" target="_blank" rel="noopener" class="btn btn-secondary" id="heroCtaSecondary" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 24px; height: 50px; text-decoration: none;">
+            <span style="font-size: 14px; font-weight: 600;">Analyze Competitor</span>
+            <div style="display: flex; align-items: center; gap: 4px; font-size: 9px; opacity: 0.6; margin-top: 2px;">
+              <span>powered by</span>
+              <img src="https://verseodin.com/brand/verseodin-logo.webp" alt="Verseodin" style="height: 10px; width: auto; object-fit: contain; vertical-align: middle;">
+              <span>verseodin</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Interactive ChatGPT Simulator -->
+      <div class="simulator-wrapper" id="simWrapper">
+        <div class="simulator-container">
+          <!-- Sidebar -->
+          <aside class="simulator-sidebar">
+            <button class="sim-new-chat-btn" id="simNewChatBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              New Chat
+            </button>
+            <div class="sim-recent-header">Recent Ads Projects</div>
+            <ul class="sim-recent-list" id="simRecentList">
+              <li class="sim-recent-item active" data-target="mastercard">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span>Mastercard</span>
+              </li>
+              <li class="sim-recent-item" data-target="bestmoney">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span>Best Money</span>
+              </li>
+              <li class="sim-recent-item" data-target="bathfitter">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span>Bath Fitter</span>
+              </li>
+            </ul>
+          </aside>
 
-      <div class="client-logos">
-        <span class="logo-item">Stripe</span>
-        <span class="logo-item">Notion</span>
-        <span class="logo-item">Linear</span>
-        <span class="logo-item">Vercel</span>
-        <span class="logo-item">Figma</span>
-        <span class="logo-item">Mercury</span>
-        <span class="logo-item">ServiceNow</span>
-        <span class="logo-item">LinkedIn</span>
+          <!-- Main chat pane -->
+          <div class="simulator-main">
+            <div class="simulator-header">
+              <div class="simulator-header-left">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729z" fill="currentColor"/>
+                </svg>
+                <span>ChatGPT Search</span>
+              </div>
+              <div class="simulator-header-right">
+                <div class="sim-model-badge">GPT-4o</div>
+              </div>
+            </div>
+
+            <div class="simulator-body" id="simBody">
+              <!-- Populated by Javascript dynamically -->
+            </div>
+
+            <form id="simulatorPromptForm" class="simulator-input-bar">
+              <input type="text" id="simInput" placeholder="Ask ChatGPT or try ad triggers (e.g. cloud security)..." autocomplete="off" required>
+              <button type="submit" class="sim-send-btn" aria-label="Send prompt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="ways-to-help" id="services">
+
+
+
+
+  <!-- How It Works Section - Stark Typographic List -->
+  <section class="services" id="ad-specs" style="background: var(--bg-primary);">
     <div class="container">
-      <p class="section-label">How we help</p>
-      <div class="help-grid">
-        <article class="help-card">
-          <h3>Agency</h3>
-          <p>Full-service ChatGPT advertising team to lead strategy, creative, media buying, and optimization.</p>
-          <a href="#services">See our services →</a>
+      <div class="text-center">
+        <span class="section-badge">How It Works</span>
+        <h2 class="section-title">The anatomy of ChatGPT <span class="serif-italic text-gradient">conversational ads</span></h2>
+        <p class="section-desc">OpenAI utilizes a structured, privacy-preserving sponsored template served dynamically based on user intent.</p>
+      </div>
+      
+      <div class="specs-list">
+        <!-- Row 1 -->
+        <div class="specs-row">
+          <div class="specs-number">01</div>
+          <div class="specs-title">Native Format</div>
+          <div class="specs-desc">
+            Sponsored links appear as clean, unobtrusive citation blocks directly under relevant AI answers, blending seamlessly into the natural flow of the conversation.
+          </div>
+        </div>
+        
+        <!-- Row 2 -->
+        <div class="specs-row">
+          <div class="specs-number">02</div>
+          <div class="specs-title">Context-Triggered</div>
+          <div class="specs-desc">
+            Ads are matched semantically based on what users are actively talking about—triggering recommendations when they ask for options, solutions, or category comparisons.
+          </div>
+        </div>
+        
+        <!-- Row 3 -->
+        <div class="specs-row">
+          <div class="specs-number">03</div>
+          <div class="specs-title">High Attention</div>
+          <div class="specs-desc">
+            Since users actively read LLM responses line-by-line, conversational ad placements achieve near-zero ad blindness and capture high-intent buyer focus.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge font-semibold">How We Help</span>
+        <h2 class="section-title">Full-service ChatGPT <span class="text-gradient">campaign management</span></h2>
+        <p class="section-desc">We bridge the gap between B2B brands and generative AI ecosystems, guiding media buying, prompts, and analytics.</p>
+      </div>
+      
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <article class="service-card" id="serviceCard1">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+          </div>
+          <h3>Conversational Media Buying</h3>
+          <p>We build structured targeting algorithms around specific prompt spaces, programmatic bidding on OpenAI systems, and performance tuning for maximum efficiency.</p>
         </article>
-        <article class="help-card">
-          <h3>Ad Library</h3>
-          <p>Searchable database of real ads running inside AI conversations. Spy, study, and build better campaigns.</p>
-          <a href="https://www.chatgptadlibrary.com/" target="_blank" rel="noopener">Explore the library →</a>
+        
+        <!-- Service 2 -->
+        <article class="service-card" id="serviceCard2">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+          </div>
+          <h3>Conversational Creative</h3>
+          <p>We construct ad copy that aligns with conversational LLM styling. Clean, contextually relevant sponsorships that feel like helpful answers instead of spam.</p>
         </article>
-        <article class="help-card">
-          <h3>Advisory</h3>
-          <p>Fractional support and team training to help your marketing org master AI-native advertising.</p>
-          <a href="#contact">Work with us →</a>
+        
+        <!-- Service 3 -->
+        <article class="service-card" id="serviceCard3">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+          </div>
+          <h3>Performance Attribution</h3>
+          <p>We trace how ChatGPT queries lead to sales pipeline. Custom landing page parameter mapping, conversion trackers, and ROI analytics built for conversational sources.</p>
         </article>
       </div>
-    </div>
-  </section>
 
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat">
-          <h2>500+</h2>
-          <p>AI campaigns launched</p>
+      <!-- Side-by-Side Ad Previewer Builder -->
+      <div class="inline-previewer-card" style="margin-top: 80px;">
+        <div class="previewer-header-section" style="margin-bottom: 40px; text-align: center;">
+          <h3 class="previewer-title" style="font-size: 24px; margin-bottom: 8px;">ChatGPT Ad Preview Builder</h3>
+          <p class="previewer-subtitle" style="font-size: 14px; color: var(--text-secondary);">Generate a live mockup of how a native sponsored link renders inside ChatGPT conversational search.</p>
         </div>
-        <div class="stat">
-          <h2>340%</h2>
-          <p>Average ROAS lift</p>
-        </div>
-        <div class="stat">
-          <h2>98%</h2>
-          <p>Client retention</p>
+        
+        <div class="previewer-split-grid">
+          <!-- Left: Input Form -->
+          <form id="previewerForm" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="toolBrand">Brand Name</label>
+              <input type="text" class="form-input" id="toolBrand" placeholder="e.g. Stripe Billing" value="Stripe Billing" required>
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="toolCategory">Target User Query Category</label>
+              <select class="form-input" id="toolCategory" style="background-color: var(--bg-primary); cursor: pointer;" required>
+                <option value="billing">"Recommend a billing and subscription CRM for startups"</option>
+                <option value="security">"What is the best way to secure our cloud APIs?"</option>
+                <option value="payroll">"What payroll provider handles international remote contractors?"</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-weight: 700; background: var(--chatgpt-green); color: #fff; border-radius: var(--radius-sm);">Generate ChatGPT Ad</button>
+          </form>
+          
+          <!-- Right: Result Display Area -->
+          <div id="toolResultArea">
+            <label class="form-label">Mock ChatGPT Output</label>
+            <div class="mock-chat-bubble-container" style="background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
+              <p id="toolMockResponse" style="font-size: 13.5px; color: #ECECEC; line-height: 1.6; margin-bottom: 16px;">AI response text here...</p>
+              
+              <!-- Simulated Ad Card -->
+              <div class="sponsored-ad-card" style="margin-top: 0; animation: none;">
+                <div class="ad-badge">Sponsored</div>
+                <div class="ad-brand-row">
+                  <div class="ad-favicon" id="toolMockFavicon">S</div>
+                  <span class="ad-brand-name" id="toolMockBrandName">Stripe Billing</span>
+                </div>
+                <div class="ad-title" id="toolMockAdTitle">Stripe Billing — Modern Subscription Billing Built for Scale</div>
+                <p class="ad-desc" id="toolMockAdDesc" style="margin-bottom: 12px !important;">Seamlessly manage subscription cycles, custom invoice flows, and tax compliance. Built for B2B tech and high-volume startups.</p>
+                <a href="https://stripebilling.com" target="_blank" rel="noopener" class="ad-link" id="toolMockAdLink">
+                  <span id="toolMockLinkText">Get started at stripebilling.com</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="expertise" id="work">
-    <div class="container">
-      <div class="expertise-header">
-        <h2>We're experts in ChatGPT advertising, creative, and performance</h2>
-      </div>
-      <div class="expertise-list">
-        <div class="expertise-item">
-          <h4>Campaign Strategy</h4>
-          <p>Audience mapping, placement planning, and messaging frameworks built for AI conversations.</p>
-        </div>
-        <div class="expertise-item">
-          <h4>Conversational Creative</h4>
-          <p>Native ad units that feel like part of the chat, not a banner forced into it.</p>
-        </div>
-        <div class="expertise-item">
-          <h4>Media Buying</h4>
-          <p>Budget allocation, bid management, and ongoing optimization across AI ad surfaces.</p>
-        </div>
-        <div class="expertise-item">
-          <h4>Performance Analytics</h4>
-          <p>Custom dashboards that connect impressions to pipeline and revenue.</p>
-        </div>
-        <div class="expertise-item">
-          <h4>A/B Testing</h4>
-          <p>Rapid creative and offer experiments to find what resonates inside the chat.</p>
-        </div>
-        <div class="expertise-item">
-          <h4>Sales Enablement</h4>
-          <p>Turn campaign insights into talk tracks, decks, and one-pagers your sales team actually uses.</p>
-        </div>
-      </div>
-      <a href="#contact" class="btn btn-secondary">Agency services</a>
-    </div>
-  </section>
 
-  <section class="industries" id="about">
-    <div class="container">
-      <h2>We have experience across deeply technical industries</h2>
-      <div class="industry-grid">
-        <div class="industry">
-          <h4>B2B SaaS</h4>
-          <ul>
-            <li>Productivity & collaboration tools</li>
-            <li>Data & analytics platforms</li>
-            <li>AI & ML infrastructure</li>
-          </ul>
+
+  <!-- Testimonials removed -->
+
+  <!-- Contact & Mad-Libs Form Section -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="section-badge">Get In Touch</span>
+        <h2>Let's build your <span class="text-gradient">AI advertising channel</span></h2>
+        <p class="section-desc">Design a native sponsored search plan based on your active target audience parameters.</p>
+      </div>
+      
+      <!-- Premium Inline Email Form -->
+      <div class="planner-card" style="max-width: 600px; margin: 0 auto; text-align: center; position: relative; background: transparent; border: none; box-shadow: none; padding: 0;">
+        <!-- Success State Overlay -->
+        <div class="success-overlay" id="successOverlay" style="position: absolute; inset: -20px; background: var(--bg-primary); border-radius: var(--radius-lg); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: var(--transition); z-index: 2;">
+          <div class="success-icon" style="width: 56px; height: 56px; background: rgba(16, 163, 127, 0.1); border: 1px solid var(--chatgpt-green); color: var(--chatgpt-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h3>We'll be in touch!</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Thank you. We will reach out to coordinate strategy shortly.</p>
         </div>
-        <div class="industry">
-          <h4>FinTech</h4>
-          <ul>
-            <li>Banking & payments</li>
-            <li>Subscription billing</li>
-            <li>Wealth & lending platforms</li>
-          </ul>
-        </div>
-        <div class="industry">
-          <h4>Security</h4>
-          <ul>
-            <li>Cybersecurity awareness</li>
-            <li>Identity & access management</li>
-            <li>DevSecOps tools</li>
-          </ul>
-        </div>
-        <div class="industry">
-          <h4>Health & Benefits</h4>
-          <ul>
-            <li>Electronic health records</li>
-            <li>Benefits administration</li>
-            <li>Health insurance tech</li>
-          </ul>
-        </div>
+
+        <p class="section-desc" style="margin-bottom: 32px; font-size: 16px; color: var(--text-secondary); text-align: center;">Ready to launch your ChatGPT advertising channel? Let's connect.</p>
+        
+        <form id="contactForm" class="premium-inline-form">
+          <input type="email" class="inline-input" id="contactEmail" placeholder="Enter your work email" required>
+          <button type="submit" class="inline-submit-btn">
+            Connect
+          </button>
+        </form>
       </div>
     </div>
   </section>
 
-  <section class="testimonials">
-    <div class="container">
-      <h2>We focus on relationships and impact</h2>
-      <div class="testimonial-slider" id="testimonialSlider">
-        <blockquote class="testimonial active">
-          <p>“GPT Ads Media helped us become the first brand in our category to advertise inside ChatGPT. The leads are warmer, the CAC is lower, and the creative feels completely native.”</p>
-          <cite><strong>Alex Chen</strong> — Director of Marketing</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>“Launching a product inside AI conversations was uncharted territory, but GPT Ads Media guided us with confidence. Their structured approach made a complex channel feel simple.”</p>
-          <cite><strong>Sebastien Magoutier</strong> — Director of Product Marketing</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>“Their team has been instrumental in positioning our AI product for growth. They are sharp, fast, and genuinely understand how to advertise in chat interfaces.”</p>
-          <cite><strong>Adam Farren</strong> — CMO</cite>
-        </blockquote>
+  <!-- Simple Footer -->
+  <footer class="site-footer" style="padding: 40px 0; border-top: 1px solid var(--border-color); background: #000;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <a href="#" class="logo-container">
+        <div class="logo-icon">G</div>
+        <span class="logo">GPT Ads Media</span>
+      </a>
+      <div style="display: flex; gap: 24px; font-size: 13px;">
+        <a href="#ad-specs" style="color: var(--text-secondary); transition: var(--transition);" onmouseover="this.style.color='var(--chatgpt-green)'" onmouseout="this.style.color='var(--text-secondary)'">What are GPT Ads</a>
+        <a href="#services" style="color: var(--text-secondary); transition: var(--transition);" onmouseover="this.style.color='var(--chatgpt-green)'" onmouseout="this.style.color='var(--text-secondary)'">How We Help</a>
+        <a href="https://www.chatgptadlibrary.com/" target="_blank" rel="noopener" style="color: var(--text-secondary); transition: var(--transition);" onmouseover="this.style.color='var(--chatgpt-green)'" onmouseout="this.style.color='var(--text-secondary)'">Ad Library</a>
+        <a href="mailto:hello@gptadsmedia.com" style="color: var(--text-secondary); transition: var(--transition);" onmouseover="this.style.color='var(--chatgpt-green)'" onmouseout="this.style.color='var(--text-secondary)'">hello@gptadsmedia.com</a>
       </div>
-      <div class="slider-dots" id="sliderDots"></div>
-      <a href="#contact" class="btn btn-secondary">Read case studies</a>
+      <p style="font-size: 12px; color: var(--text-muted); margin: 0;">© 2026 GPT Ads Media, LLC. All rights reserved.</p>
     </div>
-  </section>
+  </footer>
+</div>
 
-  <section class="cta" id="contact">
-    <div class="container">
-      <h2>Ready to advertise inside ChatGPT?</h2>
-      <a href="mailto:hello@gptadsmedia.com" class="btn btn-primary">Contact us</a>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a href="#" class="logo">GPT Ads Media</a>
-      <p>ChatGPT advertising specialists for B2B tech brands.</p>
-      <p><a href="mailto:hello@gptadsmedia.com">hello@gptadsmedia.com</a></p>
-    </div>
-    <div class="footer-col">
-      <h5>Agency</h5>
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="footer-col">
-      <h5>Resources</h5>
-      <a href="https://www.chatgptadlibrary.com/" target="_blank" rel="noopener">Ad Library</a>
-      <a href="#">Blog</a>
-      <a href="#">Newsletter</a>
-    </div>
-    <div class="footer-col">
-      <h5>Company</h5>
-      <a href="#about">About</a>
-      <a href="#">Careers</a>
-      <a href="#">Privacy</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <p>© GPT Ads Media, LLC 2024–2026</p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
